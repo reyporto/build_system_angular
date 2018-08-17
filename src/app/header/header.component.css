@@ -1,0 +1,9 @@
+header {
+    background-color: white;
+}.brb-5 {
+    border-radius: 0px 0px 5px 5px;
+}.badge {
+    font-size: 43%;
+}.navbar-light .navbar-toggler {
+    border-color: white;
+}

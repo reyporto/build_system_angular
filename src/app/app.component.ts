@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+declare const localStorage;
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'nextu-ecommerce';
+
+  constructor(private router: Router) { }
+
+  ngOnInit() {
+    let uid = localStorage.getItem('uid');
+
+    if (uid === null) {
+      this.router.navigate(['']);
+    }
+  }
 }

@@ -1,0 +1,65 @@
+<div class="background">
+  <app-header></app-header>
+  <div class="container">
+    <div *ngIf="empty" class="col-12">
+        <div class="row mb-3">
+          <div class="col-12">
+              <h1 class="mt-5em">Carro de compras vacío!</h1>
+          </div>
+        </div>
+    </div>
+    <div *ngIf="!empty" class="col-12">
+      <div class="row mb-3">
+        <div class="col-12 bb-1">
+            <h1 class="mt-5em">Carro de compras</h1>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-lg-6 products-container mb-2">
+              <div *ngFor="let product of products" class="row mb-2">
+                <div class="col-lg-3">
+                  <img class="product-img" src="../../assets/images/{{product.image}}">
+                </div>
+                <div class="col-lg-9">
+                  <div class="col-12">
+                    <div class="row">
+                      {{product.name}}
+                    </div>
+                    <div class="row">
+                      <strong>Unidades:</strong>&nbsp;{{product.quantity}}
+                    </div>
+                    <div class="row">
+                      <strong>Subtotal:</strong>&nbsp;{{product.price | currency:'USD'}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="offset-lg-1 col-lg-5">
+              <div class="row">
+                <h3>Total:&nbsp;{{total | currency:'USD'}}</h3>
+              </div>
+              <div class="row mb-1">
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-light" (click)="cancel()">Cancelar</button>
+                  <button type="button" class="btn btn-light" (click)="pay()" [disabled]="disabled">Pagar</button>
+                </div>
+              </div>
+              <div class="row">
+                <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+                  Ha ocurrido un error al Pagar. Por favor, intente de nuevo.
+                </div>
+                <div *ngIf="disabled" class="alert alert-info" role="alert">
+                  Cargando...
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  

@@ -1,0 +1,19 @@
+<header class="container mb-3 brb-5">
+  <div class="col-12">
+    <nav class="navbar navbar-light">
+      <a class="navbar-brand">La Bodega</a>
+      <div class="form-inline">
+        <button class="navbar-toggler" type="button" (click)="goTo('catalog')">
+          <i class="ion ion-md-apps"></i>
+        </button>
+        <button class="navbar-toggler" type="button" (click)="goTo('cart')">
+          <i class="ion ion-md-cart"></i>
+          <span class="badge badge-danger">{{quantity}}</span>
+        </button>
+        <button class="navbar-toggler" type="button" (click)="signOut()">
+          <i class="ion ion-md-exit"></i>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>

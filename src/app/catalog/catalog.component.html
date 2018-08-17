@@ -1,0 +1,58 @@
+<div class="background">
+  <app-header [quantity]="quantity"></app-header>
+  <div class="container container-search brt-5">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-lg-8 mt-lg-2">
+          <h2 class="mt-5em">Catálogo de Productos</h2>
+        </div>
+        <div class="col-lg-4 mt-lg-2">
+          <div class="row">
+            <div class="col-12">
+                <p class="mb-0">¿Qué estás buscando?</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <input class="form-control mr-sm-2" type="search" placeholder="Buscar porducto" [(ngModel)]="term">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container container-custom">
+    <div class="col-12">
+      <div class="row">
+        <div class="container-fluid">
+          <div class="col-12">
+            <div *ngIf="!empty" class="row">
+              <div *ngFor="let product of products | filter:term" class="col-lg-3 col-md-4 col-xs-12">
+                <div class="card mb-3">
+                  <img class="card-img-top" src="../../assets/images/{{product.image}}" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">{{product.name}}</h5>
+                    <p class="card-text"><strong>Precio:</strong>&nbsp;{{product.price | currency:'USD'}}</p>
+                    <p class="card-text"><strong>Stock:</strong>&nbsp;{{product.stock}}</p>
+                    <div class="btn-group mt-1" role="group">
+                      <button type="button" class="btn btn-warning mr-1" (click)="addToCart(product)">
+                        <strong>Agregar</strong>
+                      </button>
+                      <input type="number" value="1" min="1" [max]="product.stock" class="card-quantity text-center prodId{{product.id}}">
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <a href="javascript:void(0);" (click)="productDetail(product.id)" class="card-link">Ver más</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="empty" class="row">
+              Cargando productos...
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

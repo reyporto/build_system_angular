@@ -1,0 +1,28 @@
+.card-body p {
+    margin-bottom: 0 !important;
+    font-size: 15px;
+}.background {
+    height: 100%;
+    width: 100%;
+    background-image: url(../../assets/images/main-fondo.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: absolute;
+    overflow-y: scroll;
+}.container {
+    background-color: white;
+    padding-bottom: 15px;
+    border-radius: 5px;
+}.mt-5em {
+    margin-top: .5em;
+}.bb-1 {
+    border-bottom: 1px solid #ccc;
+}.product-img {
+    width: 80px;
+    height: 80px;
+}.products-container {
+    overflow-y: scroll;
+    height: 500px;
+}

@@ -1,0 +1,31 @@
+.card-body p {
+    margin-bottom: 0 !important;
+    font-size: 15px;
+}.background {
+    height: 100%;
+    width: 100%;
+    background-image: url(../../assets/images/main-fondo.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: absolute;
+}.container {
+    background-color: white;
+}.container-custom {
+    height: 85%;
+    overflow-y: scroll;
+    padding-top: 10px;
+}.container-search {
+    padding-bottom: 10px;
+}.card-img-top {
+    height: 200px;
+}.card-quantity {
+    width: 50%;
+}.mt-5em {
+    margin-top: .5em;
+}.brt-5 {
+    border-radius: 5px 5px 0px 0px;
+}.btn {
+    color: white;
+}

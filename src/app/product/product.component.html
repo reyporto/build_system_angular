@@ -1,0 +1,35 @@
+<div class="background">
+  <app-header></app-header>
+  <div class="container">
+    <div *ngIf="!empty" class="col-12">
+      <div class="row mb-3">
+        <div class="col-12 bb-1">
+            <h1 class="mt-5em">{{product.name}}</h1>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-lg-7">
+          <img src="../../assets/images/{{product.image}}" class="product-image">
+        </div>
+        <div class="col-lg-5">
+          <div class="row">
+            <strong>Price:</strong>&nbsp;{{product.price | currency:'USD'}}
+          </div>
+          <div class="row">
+            <strong>Stock:</strong>&nbsp;{{product.stock}}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+            <button type="button" class="btn btn-light" (click)="back()">Atrás</button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="empty" class="col-12">
+      <div class="row">
+        Cargando...
+      </div>
+    </div>
+  </div>
+</div>
